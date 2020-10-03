@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "workspaces": [
+    "admin-gs-*"
+  ],
+  "devDependencies": {
+    "wsrun": "^5.2.2"
+  },
+  "scripts": {
+    "start": "wsrun start"
+  }
+}

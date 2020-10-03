@@ -1,1 +1,6 @@
+## WEBSTORM ##
 .idea/
+
+## NODE ##
+node_modules/
+build/

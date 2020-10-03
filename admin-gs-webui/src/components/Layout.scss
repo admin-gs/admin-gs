@@ -1,0 +1,49 @@
+.layout {
+  min-height: 100vh;
+
+  $nav-width: 300px;
+
+  nav {
+    @extend .has-background-01dp;
+    width: $nav-width;
+    height: 100vh;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > div {
+      flex-direction: column;
+    }
+
+    a {
+      text-decoration: none;
+      padding: 24px;
+      font-size: 1.4em;
+      align-items: center;
+      border-right: 3px transparent solid;
+      -webkit-user-drag: none;
+
+      i {
+        width: 50px;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:hover {
+        @extend .elevation-02dp
+      }
+
+      &.active {
+        i {
+          color: $primary;
+        }
+
+        border-color: $primary;
+      }
+    }
+  }
+
+  main {
+    padding: 24px 24px 24px $nav-width + 24px;
+  }
+}

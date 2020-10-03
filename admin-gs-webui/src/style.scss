@@ -1,0 +1,53 @@
+$elevations: (
+        "00dp": 0,
+        "01dp": 0.05,
+        "02dp": 0.07,
+        "03dp": 0.08,
+        "04dp": 0.09,
+        "06dp": 0.11,
+        "08dp": 0.12,
+        "12dp": 0.14,
+        "16dp": 0.15,
+        "24dp": 0.16,
+        "soft": 0.87,
+        "disabled": 0.38,
+);
+
+$background: rgb(18, 18, 18);
+$foreground: rgb(255, 255, 255);
+$primary: rgb(255, 36, 136);
+$accent: rgb(0, 166, 255);
+
+
+@each $dp, $op in $elevations {
+  .has-background-#{$dp} {
+    background-color: #{rgba($foreground, $op)};
+  }
+
+  .elevation-#{$dp} {
+    @extend .has-background-#{$dp};
+    box-shadow: #{$op*100}px 0 #{$op*100}px 0 #{rgba($foreground, $op)};
+  }
+}
+
+
+// RESET
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  color: $foreground;
+}
+
+div, nav, main, a {
+  display: flex;
+}
+
+body {
+  background-color: $background;
+}
+
+@import "components";
+
+@import "~@fortawesome/fontawesome-free/css/all.css";

@@ -11,4 +11,5 @@ RUN mv factorio/* .
 RUN rm -rf factorio
 RUN ./bin/x64/factorio --version
 
-ENTRYPOINT ["./bin/x64/factorio"]
+RUN ./bin/x64/factorio --create saves/default.zip
+ENTRYPOINT ["./bin/x64/factorio", "--start-server-load-latest"]

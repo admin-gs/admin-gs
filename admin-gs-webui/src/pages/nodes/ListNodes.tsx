@@ -1,26 +1,39 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom';
 import {DataCards, Layout, Tag} from "../../components";
 
-const Card: React.FC<any> = ({id, name, type, address, os, role, state}) => (
-    <>
-        <div className="info">
-            <Link to={`/nodes/${id}`}><h2><i className={`fab fa-${type}`}/> <i className={`fab fa-${os}`}/> {name}</h2>
-            </Link>
-            <div className="tags">
-                <Tag color="accent">{role}</Tag>
-                <Tag color={state === "ready" ? "success" : "error"}>
-                    {state}
-                </Tag>
-            </div>
-            <code>{address}</code>
-        </div>
-        <div className="servers">
-            TODO: Server Badges
-        </div>
-    </>
-);
+const Card: React.FC<any> = ({id, name, type, address, os, role, state}) => {
+    const [servers, setServers] = useState([]);
 
+    useEffect(() => {
+        fetch(`/api/nodes/${id}/servers`)
+            .then(r => r.json())
+            .then(setServers)
+    }, [id]);
+    return (
+        <>
+            <div className="info">
+                <Link to={`/nodes/${id}`}><h2><i className={`fab fa-${type}`}/> <i className={`fab fa-${os}`}/> {name}
+                </h2>
+                </Link>
+                <div className="tags">
+                    <Tag color="accent">{role}</Tag>
+                    <Tag color={state === "ready" ? "success" : "error"}>
+                        {state}
+                    </Tag>
+                </div>
+                <code>{address}</code>
+            </div>
+            <div className="servers">
+                {servers.map(({id, name}) => (
+                    <div className="server" key={id}>
+                        <h3>{name}</h3>
+                    </div>
+                ))}
+            </div>
+        </>
+    );
+}
 
 export const ListNodes: React.FC = () => {
 

@@ -1,0 +1,35 @@
+.list-nodes-page {
+  .card {
+    flex-direction: row;
+
+    .info {
+      flex-grow: 0;
+
+      h2 {
+        align-items: center;
+      }
+
+      .tags {
+        margin: 12px 0;
+        align-self: flex-start;
+        flex-direction: row;
+
+        .tag {
+          margin-right: 6px;
+        }
+      }
+
+      code {
+        color: $warning;
+        font-family: monospace;
+        font-size: 1.1em;
+      }
+    }
+
+    .servers {
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

@@ -18,6 +18,10 @@ $foreground: rgb(255, 255, 255);
 $primary: rgb(255, 36, 136);
 $accent: rgb(0, 166, 255);
 
+$success: rgb(70, 199, 0);
+$warning: rgb(255, 183, 0);
+$error: rgb(255, 0, 81);
+
 
 @each $dp, $op in $elevations {
   .has-background-#{$dp} {
@@ -26,7 +30,7 @@ $accent: rgb(0, 166, 255);
 
   .elevation-#{$dp} {
     @extend .has-background-#{$dp};
-    box-shadow: #{$op*100}px 0 #{$op*100}px 0 #{rgba($foreground, $op)};
+    box-shadow: #{$op*100}px 0 #{$op*100}px 0 #{rgba($background, $op)};
   }
 }
 
@@ -37,17 +41,29 @@ $accent: rgb(0, 166, 255);
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
-  color: $foreground;
 }
 
 div, nav, main, a {
   display: flex;
+  flex-direction: column;
 }
 
 body {
   background-color: $background;
+  color: $foreground;
+}
+
+a {
+  text-decoration: none;
+  color: $foreground;
+
+  &:hover {
+    color: $primary;
+    text-decoration: underline;
+  }
 }
 
 @import "components";
+@import "pages";
 
 @import "~@fortawesome/fontawesome-free/css/all.css";

@@ -1,13 +1,14 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-export const Layout: React.FC = ({children}) => (
-    <div className="layout">
+export interface Props {
+    name: string;
+}
+
+export const Layout: React.FC<Props> = ({children, name}) => (
+    <div className={`layout ${name}-page`}>
         <nav>
             <div className="top-menu">
-                <NavLink to="/servers">
-                    <i className="fas fa-gamepad"/> Game Servers
-                </NavLink>
                 <NavLink to="/nodes">
                     <i className="fas fa-server"/> Nodes
                 </NavLink>

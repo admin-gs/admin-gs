@@ -8,7 +8,6 @@
     width: $nav-width;
     height: 100vh;
     position: fixed;
-    flex-direction: column;
     justify-content: space-between;
 
     & > div {
@@ -22,6 +21,7 @@
       align-items: center;
       border-right: 3px transparent solid;
       -webkit-user-drag: none;
+      flex-direction: row;
 
       i {
         width: 50px;

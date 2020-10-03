@@ -1,0 +1,26 @@
+.tag {
+  color: $foreground;
+  padding: 6px;
+  font-weight: bold;
+  border-radius: 3px;
+
+  &.is-primary {
+    background-color: $primary;
+  }
+
+  &.is-accent {
+    background-color: $accent;
+  }
+
+  &.is-success {
+    background-color: $success;
+  }
+
+  &.is-warning {
+    background-color: $warning;
+  }
+
+  &.is-error {
+    background-color: $error;
+  }
+}

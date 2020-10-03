@@ -1,0 +1,13 @@
+{
+  "name": "admin-gs-domain",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  }
+}

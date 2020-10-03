@@ -1,5 +1,5 @@
 import React from 'react'
-import {Layout} from "../../components";
+import {Layout} from "../../components/Layout";
 
 export const ListSettings: React.FC = () => (
     <Layout name="list-settings">

@@ -1,5 +1,5 @@
 import {Injectable} from "@nestjs/common";
-import {Game} from "./Game";
+import {Game} from "admin-gs-domain";
 
 @Injectable()
 export class GamesLibrary {

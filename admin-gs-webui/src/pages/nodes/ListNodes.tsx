@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom';
-import {DataCards, Layout, Tag} from "../../components";
+import {Tag} from "../../components/Tag";
+import {Layout} from "../../components/Layout";
+import {DataCards} from "../../components/DataCards";
 
 const Card: React.FC<any> = ({id, name, type, address, os, role, state}) => {
     const [servers, setServers] = useState([]);
@@ -42,7 +44,7 @@ export const ListNodes: React.FC = () => {
             <h1>Nodes</h1>
             <DataCards<any>
                 getData={() => fetch('/api/nodes').then(r => r.json())}
-                getKey={(node, index) => node.id}
+                getKey={(node) => node.id}
                 CardComponent={Card}
             />
         </Layout>

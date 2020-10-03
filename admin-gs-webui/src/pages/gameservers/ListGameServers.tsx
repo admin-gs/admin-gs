@@ -1,5 +1,5 @@
 import React from 'react'
-import {Layout} from "../../components";
+import {Layout} from "../../components/Layout";
 
 export const ListGameServers: React.FC = () => (
     <Layout name="list-game-servers">

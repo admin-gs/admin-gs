@@ -29,5 +29,8 @@
     ">0.2%",
     "not dead",
     "not op_mini all"
-  ]
+  ],
+  "dependencies": {
+    "admin-gs-domain": "1.0.0"
+  }
 }

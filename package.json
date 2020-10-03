@@ -7,7 +7,7 @@
     "wsrun": "^5.2.2"
   },
   "scripts": {
-    "start": "wsrun start",
-    "build": "wsrun build"
+    "start": "wsrun --stages start",
+    "build": "wsrun --stages build"
   }
 }
